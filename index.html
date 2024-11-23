@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iphoneRestore</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="device-page">
+    <!-- Header with centered title and search icon -->
+    <header class="header">
+      <h1 class="title">iphoneRestore</h1>
+    </header>
+
+    <!-- Device Information Card -->
+    <main class="content" >
+      <div class="device-info" >
+        <div class="device-details">
+          <h2 id="deviceName"></h2>
+          <div class="info-grid">
+            <div>固件版本: <span id="productversion"></span></div>
+            <div>激活状态: <span id="activationstate"></span></div>
+            <div>设备型号: <span id="modelnumber"></span></div>
+            
+            <div>产品型号: <span id="producttype"></span></div>
+            <div>序列号: <span id="serialnumber"></span></div>
+            <div>硬件平台: <span id="hardwareplatform"></span></div>
+            <div>CPU架构: <span id="cpuarchitecture"></span></div>
+            <div>Wi-Fi 地址: <span id="wifiaddress"></span></div>
+            <div>蓝牙地址: <span id="bluetoothaddress"></span></div>
+            <div>设备颜色: <span id="devicecolor"></span></div>
+            <div>生产日期: <span id="productiondate"></span></div>
+            <div>区域信息: <span id="regioninfo"></span></div>
+            <div>iCloud状态: <span id="icloudstatus"></span></div>
+            <div>SIM状态: <span id="simstatus"></span></div>
+            <div>唯一设备ID: <span id="uniquedeviceid"></span></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom action buttons for language options and start button -->
+    <footer class="device-actions">
+      <button class="action-btn" onclick="deviceBackUp2()">中文恢复</button>
+      <button class="action-btn" onclick="deviceBackUp2()">English reset</button>
+    </footer>
+  </div>
+  <script src='./renderer.js'></script>
+
+</body>
+</html>
