@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>iphoneRestore</title>
   <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./login.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
   <div class="device-page">
     <!-- Header with centered title and search icon -->
     <header class="header">
       <h1 class="title">iphoneRestore</h1>
+      <div id="login-btn" class="login-btn">login</div>
     </header>
 
     <!-- Device Information Card -->
-    <main class="content" >
+    <main class="content" id="card-box" >
       <div class="device-info" >
         <div class="device-details">
           <h2 id="deviceName"></h2>
@@ -39,6 +42,16 @@
         </div>
       </div>
     </main>
+    <main class="content" id="normal-box" >
+      <div class="device-info" >
+        <div class="device-details">
+          <h2 id="deviceName">
+            设备未连接
+          </h2>
+          <div>请确认设备已通过数据线连接至主机，并确保设备处于开屏状态，关闭查找功能且允许弹窗。</div>
+        </div>
+      </div>
+    </main>
 
     <!-- Bottom action buttons for language options and start button -->
     <footer class="device-actions">
@@ -46,7 +59,26 @@
       <button class="action-btn" onclick="deviceBackUp2()">English reset</button>
     </footer>
   </div>
+    <!-- 登录弹窗和背景遮罩层 -->
+    <div id="overlay"></div>
+    <div id="login-popup">
+      <h2>登录</h2>
+      <div class="input-field">
+        <label for="username">用户名</label>
+        <input id="username" type="text" placeholder="请输入用户名">
+      </div>
+      <div class="input-field">
+        <label for="password">密码</label>
+        <input id="password" type="password" placeholder="请输入密码">
+      </div>
+      <button class="login-btn-submit" id="login-submit">登录</button>
+      <button class="login-btn-cancel" id="cancel-btn">取消</button>
+      <div id="error-message" style="color: red; display: none;">用户名或密码错误</div> <!-- 错误消息 -->
+    </div>
   <script src='./renderer.js'></script>
+  <script src='./login.js'>
+
+  </script>
 
 </body>
 </html>

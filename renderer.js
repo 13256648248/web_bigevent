@@ -3,6 +3,8 @@ let deviceInfo = {};
 let UniqueDeviceID = "";
 /** 定时去取设备信息 如果取到就关闭，没取到继续 */
 const fetchDeviceInfoInterval = setInterval(fetchDeviceInfo, 1000);
+showBox('normal-box')
+
 
 async function fetchDeviceInfo() { 
   try {
@@ -25,8 +27,9 @@ async function fetchDeviceInfo() {
     }
 
 
+    showBox('card-box')
   } catch (error) {
-    console.error("Failed to fetch device info:", error);
+    showBox('normal-box')
   }
 }
 
@@ -66,3 +69,12 @@ async function deviceBackUp2() {
   }
 }
 
+function showBox(Id){
+  if(Id === 'card-box'){
+    document.getElementById('card-box').style.display = 'block';
+    document.getElementById('normal-box').style.display = 'none';
+  }else{
+    document.getElementById('card-box').style.display = 'none';
+    document.getElementById('normal-box').style.display = 'block';
+  }
+}

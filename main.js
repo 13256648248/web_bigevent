@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron/main')
 const path = require('node:path')
 const fs = require("fs");
-import {renameBackupFile} from "./utils";
+const { renameBackupFile } = require('./utils')
 
 const plist = require("plist");
 const { exec } = require("child_process");
