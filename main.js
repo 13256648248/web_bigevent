@@ -56,11 +56,13 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
+
 // backupTwo2
 ipcMain.on("send-unique-device-id", (event, uniqueDeviceID, lang) => {
-  console.log("Received UniqueDeviceID:", uniqueDeviceID);
+  console.log("Received UniqueDeviceID:", lang);
 
   const backup = path.join(__dirname, "./ios-bin/backup/backupTwo");
+  // TODO: 判断中英文 选择恢复文件
   const exePath = path.join(__dirname, "./ios-bin/bin/idevicebackup2.exe");
   // 修改文件 uniqueDeviceID
   renameBackupFile(backup, uniqueDeviceID);

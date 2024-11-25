@@ -43,10 +43,14 @@ loginSubmitBtn.addEventListener('click', function() {
       pwd,
     })
     .then(response => {
-      const token = response.data.token.token; // 假设API返回一个token
+
+      const { data } = response;
+      console.log('data', data);
+      const token = data.data.token.token; // 假设API返回一个token
 
       // 存储token到localStorage
-      localStorage.setItem('authToken', token);
+      localStorage.setItem('token', token);
+      localStorage.setItem('userInfo',  data.data);
 
       // 关闭登录弹窗
       loginPopup.style.display = 'none';
@@ -54,9 +58,7 @@ loginSubmitBtn.addEventListener('click', function() {
 
       // 可以根据需要进行一些操作，比如重定向到其他页面
       console.log('登录成功，Token:', token);
-      alert('登录成功！');
 
-      // 还可以在此进行界面更新，或使用token来设置身份验证
     })
     .catch(error => {
       // 登录失败，显示错误信息

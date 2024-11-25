@@ -1,8 +1,8 @@
 {
   "name": "my-electron-app",
   "version": "1.0.0",
-   "authors": "alan",
-        "description": "windows reset system",
+  "authors": "alan",
+  "description": "windows reset system",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,9 +12,7 @@
   },
   "config": {
     "forge": {
-      "squirrelWindows": {
-     
-      },
+      "squirrelWindows": {},
       "make_targets": {
         "win32": [
           "squirrel",
