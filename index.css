@@ -73,7 +73,9 @@ body{
 .info-grid div {
   padding: 0.2rem 0;
 }
-
+.info-grid > :last-child {
+  grid-column: span 2; /* 让最后一个元素占据整行 */
+}
 /* Footer action buttons */
 .device-actions {
   width: 100%;
