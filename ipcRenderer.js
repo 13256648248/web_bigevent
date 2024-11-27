@@ -22,14 +22,18 @@ window.electronAPI.onRestoreProgress(({ type, message }) => {
       progressMessage.style.color = "#e74c3c";
       progressMessage.style.fontWeight = "bold";
       progressMessage.style.animation = "fadeIn 1s ease";
-
       break;
     case "complete":
       progressMessage.style.color = "#007bff";
       progressMessage.style.fontWeight = "bold";
       progressMessage.style.animation = "fadeIn 1s ease";
       
-  window.alert('✅已完成请耐心等待开机')
+      window.alert('✅已完成请耐心等待开机');
+
+      // 延迟3秒后清空内容
+      setTimeout(() => {
+        progressContainer.innerHTML = ''; // 清空progressContainer的内容
+      }, 3000);
       break;
     default:
       progressMessage.style.color = "#333";

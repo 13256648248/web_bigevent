@@ -11,7 +11,6 @@ async function fetchDeviceInfo() {
     deviceInfo = extractDeviceData(fetchedInfoString);
     console.log("getDeviceInfo", deviceInfo);
 
-    clearInterval(fetchDeviceInfoInterval);
     updateDeviceInfoUI(deviceInfo);
     toggleBox("card-box");
   } catch (error) {
@@ -102,7 +101,7 @@ async function processLoggedInUser(token, lang) {
 async function checkDeviceRegistrationStatus(lang) {
   try {
     const registration = await checkDeviceRegistration(
-      deviceInfo.UniqueDeviceID
+      deviceInfo.SerialnNmber
     );
 
     if (registration.data.code == 0) {
