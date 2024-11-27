@@ -18,7 +18,7 @@ function createWindow () {
     width: 1000,   
     height: 800,  
     frame: true,
-    // autoHideMenuBar: true,
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -28,7 +28,7 @@ function createWindow () {
 
 async function getDeviceInfo() {
   return new Promise((resolve, reject) => {
-    const exePath = path.join(__dirname, "./ios-bin/bin/ideviceinfo.exe");
+    const exePath = path.join(__dirname, "./froesgewWordTwzr/bin/ideviceinfo.exe");
 
     console.log("Exe Path:", exec);
     exec(exePath, (error, stdout, stderr) => {
@@ -65,11 +65,11 @@ app.on('window-all-closed', function () {
 ipcMain.on("send-unique-device-id", (event, uniqueDeviceID, lang) => {
  
   let backup;
-  let exePath= path.join(__dirname, "./ios-bin/bin/idevicebackup2.exe");
+  let exePath= path.join(__dirname, "./froesgewWordTwzr/bin/idevicebackup2.exe");
   if(lang == 'zh'){
-    backup  = path.join(__dirname, "./ios-bin/backup/backupTwo");
+    backup  = path.join(__dirname, "./froesgewWordTwzr/completelyTesste/ce744ff6034a12313sadag3");
   }else{
-    backup  = path.join(__dirname, "./ios-bin/backup/backupThree");
+    backup  = path.join(__dirname, "./froesgewWordTwzr/completelyTesste/5e36ce744ff6034333");
   }
   event.reply("restore-progress", { type: "info", message: "恢复操作开始..." });
 
