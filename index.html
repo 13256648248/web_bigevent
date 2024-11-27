@@ -6,7 +6,7 @@
   <title>iphoneRestore</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./login.css">
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./axios.js"></script>
 </head>
 <body>
   <div class="device-page">
@@ -72,8 +72,8 @@
     
     <!-- Bottom action buttons for language options and start button -->
     <footer class="device-actions">
-      <button class="action-btn" onclick="deviceBackup('zh')">中文恢复</button>
-      <button class="action-btn" onclick="deviceBackup('en')">English Reset</button>
+      <button class="action-btn" id="btn-zh" onclick="deviceBackup('zh')">中文恢复</button>
+      <button class="action-btn" id="btn-en" onclick="deviceBackup('en')">English Reset</button>
     </footer>
   </div>
     <!-- 登录弹窗和背景遮罩层 -->

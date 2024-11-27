@@ -51,6 +51,7 @@ async function deviceBackup(lang) {
   if (!uniqueDeviceID) {
     return window.alert("请先连接设备");
   }
+  window.alert('请断网, id退出 关闭屏幕锁')
   try {
     await handleAuthentication(lang);
   } catch (error) {
