@@ -21,18 +21,13 @@ files.forEach(file => {
 console.log('obfuscatedCode', obfuscatedCode);
 
     // 将混淆后的代码保存到一个临时文件
-    const tempFilePath = path.join(__dirname, '../dist', file.replace('.js', '.obfuscated.js'));
+    const tempFilePath = path.join(__dirname, '../dist', file.replace('.js', '.js'));
     fs.writeFileSync(tempFilePath, obfuscatedCode, 'utf8');
 
-    // 编译混淆后的文件
-    bytenode.compileFile({
-      filename: tempFilePath,
-      output: outputPath
-    });
+
 
     console.log(`Compiled obfuscated ${file} to ${outputPath}`);
 
-    // 删除临时混淆文件
-    fs.unlinkSync(tempFilePath);
+
   }
 });
