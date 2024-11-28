@@ -54,5 +54,17 @@
     "electron-squirrel-startup": "^1.0.1",
     "javascript-obfuscator": "^4.1.1",
     "plist": "^3.1.0"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "mac": {
+      "icon": "assets/icons/logo.icns"
+    },
+    "win": {
+      "icon": "assets/icons/logo.ico"
+    },
+    "linux": {
+      "icon": "assets/icons/logo.png"
+    }
   }
 }

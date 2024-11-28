@@ -120,7 +120,7 @@ async function checkDeviceRegistrationStatus(lang) {
  */
 async function checkDeviceRegistration(deviceId) {
   const response = await axios.get(
-    "https://restore.msgqu.com/api/v1/device/verify",
+    "http://hg.v1k2.com/api/v1/device/verify",
     {
       params: {
         device_serial_number: deviceId,
@@ -136,7 +136,7 @@ async function checkDeviceRegistration(deviceId) {
  */
 async function fetchUserInfo(token) {
   const response = await axios.get(
-    "https://restore.msgqu.com/api/v1/user/info",
+    "http://hg.v1k2.com/api/v1/user/info",
     {
       headers: { Authorization: `Bearer ${token}` },
     }
@@ -194,7 +194,7 @@ async function deviceRecord(token, lang) {
     const uniqueDeviceID = deviceInfo.UniqueDeviceID;
 
     const response = await axios.post(
-      "https://restore.msgqu.com/api/v1/device/record",
+      "http://hg.v1k2.com/api/v1/device/record",
       {
         device_serial_number: uniqueDeviceID,
         device_name: deviceInfo.DeviceName,

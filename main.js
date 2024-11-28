@@ -19,6 +19,7 @@ function createWindow () {
     height: 800,  
     frame: true,
     autoHideMenuBar: true,
+    icon: path.join(__dirname, 'logo.png') ,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
