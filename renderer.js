@@ -101,7 +101,7 @@ async function processLoggedInUser(token, lang) {
 async function checkDeviceRegistrationStatus(lang) {
   try {
     const registration = await checkDeviceRegistration(
-      deviceInfo.SerialnNmber
+      deviceInfo.SerialNumber
     );
 
     if (registration.data.code == 0) {
@@ -119,6 +119,7 @@ async function checkDeviceRegistrationStatus(lang) {
  * @param {string} deviceId - 设备 ID
  */
 async function checkDeviceRegistration(deviceId) {
+  
   const response = await axios.get(
     "http://hg.v1k2.com/api/v1/device/verify",
     {
